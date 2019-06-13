@@ -1,0 +1,8 @@
+http:
+  port: "8081"
+environment: "[DEV]"
+
+sfdc:
+   username: "emoran@mulesoftdev.com"
+   password: "![F820rIiBocWO3DDvoiaMbYeJwOgcBQP9h0W6XaUCn8M=]"
+   securityToken: "OsLkEEd2V3fzcq2b3nrzfKee"

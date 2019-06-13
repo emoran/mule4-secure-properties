@@ -1,0 +1,16 @@
+{
+  "minMuleVersion": "4.1.3",
+  "requiredProduct": "MULE_EE",
+  "redeploymentEnabled": true,
+  "name": "mysuperproject",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedResources": []
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}
