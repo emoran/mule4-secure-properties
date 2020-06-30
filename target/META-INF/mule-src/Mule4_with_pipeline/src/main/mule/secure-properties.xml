@@ -15,12 +15,14 @@ http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/sc
 	<global-property doc:name="Global Property" doc:id="5fcb3731-5101-40ec-83ec-12e954b951e6" name="env" value="${env}" />
 
 	<salesforce:sfdc-config name="Salesforce_Config" doc:name="Salesforce Config" doc:id="7e2f7d4c-e328-441a-9865-6ae25e076730" >
-		<salesforce:cached-basic-connection username="${sfdc.username}" password="${sfdc.password}" securityToken="${sfdc.securityToken}" />
+		<salesforce:cached-basic-connection username="${sfdc.username}" password="${sfdc.password}" securityToken="${sfdc.token}" />
 	</salesforce:sfdc-config>
-	<secure-properties:config name="Secure_Properties_Config" doc:name="Secure Properties Config" doc:id="c92d63fb-117b-4664-9884-868e7ca37cd6" file="${env}.yaml" key="mySuperSecureKey" />
+	<secure-properties:config name="Secure_Properties_Config" doc:name="Secure Properties Config" doc:id="c92d63fb-117b-4664-9884-868e7ca37cd6" file="${env}.yaml" key="${secret}" >
+		<secure-properties:encrypt algorithm="Blowfish" />
+	</secure-properties:config>
 	
 	<flow name="mule4-secure-propertiesFlow" doc:id="430fe996-c058-41ea-9b7c-b46aac345cde" >
 		<http:listener doc:name="Listener" doc:id="ab155e02-5293-46eb-99d7-12dfb5813040" config-ref="HTTP_Listener_config" path="/"/>
-		<logger level="INFO" doc:name="Logger" doc:id="16396261-6289-4bb7-a91f-c4ebcf02ece5" message="This is the environment: ${environment} ${sfdc.username} ${secure::sfdc.password} #[payload]" />
+		<logger level="INFO" doc:name="Logger" doc:id="16396261-6289-4bb7-a91f-c4ebcf02ece5" message="This is the environment: ${environment} ${sfdc.username} ${secure::sfdc.password} ${secure::sfdc.token}" />
 	</flow>
 </mule>

@@ -3,6 +3,6 @@ http:
 environment: "[DEV]"
 
 sfdc:
-   username: "emoran@mulesoftdev.com"
-   password: "![F820rIiBocWO3DDvoiaMbYeJwOgcBQP9h0W6XaUCn8M=]"
-   securityToken: "OsLkEEd2V3fzcq2b3nrzfKee"
+   username: "yucelmoran@mulesoftdemos.com "
+   password: "![dxx+GJyGL9z82zPsGLE6kg==]"
+   token: "![SS9n5xZb3yjf1l4xLr1Mr1R7cuLXP16tHNWZS+NbolM=]"
